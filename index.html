@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aukcje Samochodowe</title>
     <style>
-        /* style.css */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -24,6 +23,7 @@
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -55,6 +55,11 @@
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
+        }
+
+        .aukcja img {
+            max-width: 200px;
+            max-height: 150px;
         }
 
         form {
@@ -94,6 +99,10 @@
             width: 100%;
             bottom: 0;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -104,14 +113,17 @@
                 <li><a href="#aukcje">Aukcje</a></li>
                 <li><a href="#rejestracja">Rejestracja</a></li>
                 <li><a href="#dodaj">Dodaj Auto</a></li>
+                <li><a href="#zaloguj">Zaloguj się</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="aukcje">
         <h2>Aukcje Samochodów</h2>
+
         <div class="aukcja">
             <h3>Volkswagen Golf</h3>
+            <img src="https://via.placeholder.com/200x150" alt="Volkswagen Golf">
             <p><strong>Cena:</strong> 45 000 PLN</p>
             <p><strong>Rok Produkcji:</strong> 2018</p>
             <p><strong>Typ Silnika:</strong> Diesel 2.0 TDI</p>
@@ -121,6 +133,7 @@
 
         <div class="aukcja">
             <h3>Ford Focus</h3>
+            <img src="https://via.placeholder.com/200x150" alt="Ford Focus">
             <p><strong>Cena:</strong> 38 000 PLN</p>
             <p><strong>Rok Produkcji:</strong> 2016</p>
             <p><strong>Typ Silnika:</strong> Benzyna 1.6</p>
@@ -128,20 +141,39 @@
             <p><strong>Opis:</strong> Dobry stan, po wymianie rozrządu.</p>
         </div>
 
-        <!-- Więcej aukcji można dodać w ten sam sposób -->
+        <div class="aukcja">
+            <h3>Geely Emgrand X7</h3>
+            <img src="https://via.placeholder.com/200x150" alt="Geely Emgrand X7">
+            <p><strong>Cena:</strong> 25 000 PLN</p>
+            <p><strong>Rok Produkcji:</strong> 2017</p>
+            <p><strong>Typ Silnika:</strong> Benzyna 2.4</p>
+            <p><strong>Przebieg:</strong> 100 000 km</p>
+            <p><strong>Opis:</strong> Auto po pierwszym właścicielu, bardzo oszczędne w eksploatacji.</p>
+        </div>
+
+        <div class="aukcja">
+            <h3>BYD F3</h3>
+            <img src="https://via.placeholder.com/200x150" alt="BYD F3">
+            <p><strong>Cena:</strong> 18 000 PLN</p>
+            <p><strong>Rok Produkcji:</strong> 2015</p>
+            <p><strong>Typ Silnika:</strong> Benzyna 1.5</p>
+            <p><strong>Przebieg:</strong> 120 000 km</p>
+            <p><strong>Opis:</strong> Tani w utrzymaniu, świetny do miasta.</p>
+        </div>
+
     </section>
 
     <section id="rejestracja">
         <h2>Rejestracja</h2>
         <form>
             <label for="username">Nazwa Użytkownika:</label>
-            <input type="text" id="username" name="username" required><br><br>
+            <input type="text" id="username" name="username" required>
 
             <label for="email">Adres Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
+            <input type="email" id="email" name="email" required>
 
             <label for="password">Hasło:</label>
-            <input type="password" id="password" name="password" required><br><br>
+            <input type="password" id="password" name="password" required>
 
             <button type="submit">Zarejestruj się</button>
         </form>
@@ -151,70 +183,65 @@
         <h2>Dodaj Auto do Aukcji</h2>
         <form>
             <label for="marka">Marka:</label>
-            <input type="text" id="marka" name="marka" required><br><br>
+            <input type="text" id="marka" name="marka" required>
 
             <label for="model">Model:</label>
-            <input type="text" id="model" name="model" required><br><br>
+            <input type="text" id="model" name="model" required>
 
             <label for="rok">Rok Produkcji:</label>
-            <input type="number" id="rok" name="rok" required><br><br>
+            <input type="number" id="rok" name="rok" required>
 
             <label for="silnik">Typ Silnika:</label>
-            <input type="text" id="silnik" name="silnik" required><br><br>
+            <input type="text" id="silnik" name="silnik" required>
 
             <label for="przebieg">Przebieg (w km):</label>
-            <input type="number" id="przebieg" name="przebieg" required><br><br>
+            <input type="number" id="przebieg" name="przebieg" required>
 
             <label for="cena">Cena:</label>
-            <input type="number" id="cena" name="cena" required><br><br>
+            <input type="number" id="cena" name="cena" required>
 
             <label for="zdjecie">Zdjęcie Auta:</label>
-            <input type="file" id="zdjecie" name="zdjecie" accept="image/*" required><br><br>
+            <input type="file" id="zdjecie" name="zdjecie" accept="image/*" required>
 
             <label for="wypadkowe">Czy auto było wypadkowe?</label>
             <select id="wypadkowe" name="wypadkowe" required>
                 <option value="tak">Tak</option>
                 <option value="nie">Nie</option>
-            </select><br><br>
+            </select>
 
             <label for="kolosize">Rozmiar Kół (np. 16", 17"): </label>
-            <input type="text" id="kolosize" name="kolosize" required><br><br>
+            <input type="text" id="kolosize" name="kolosize" required>
 
             <label for="opis">Opis:</label>
-            <textarea id="opis" name="opis" rows="4" required></textarea><br><br>
+            <textarea id="opis" name="opis" rows="4" required></textarea>
 
             <button type="submit">Dodaj Auto</button>
         </form>
+    </section>
 
-        <h3>Ankieta dotycząca sprzedawanego auta:</h3>
+    <section id="zaloguj" class="hidden">
+        <h2>Zaloguj się</h2>
         <form>
-            <label for="cena_ankieta">Cena:</label>
-            <input type="number" id="cena_ankieta" name="cena_ankieta" required><br><br>
+            <label for="login_username">Nazwa Użytkownika:</label>
+            <input type="text" id="login_username" name="login_username" required>
 
-            <label for="rok_ankieta">Rok Produkcji:</label>
-            <input type="number" id="rok_ankieta" name="rok_ankieta" required><br><br>
+            <label for="login_password">Hasło:</label>
+            <input type="password" id="login_password" name="login_password" required>
 
-            <label for="zdjecie_ankieta">Zdjęcie Auta:</label>
-            <input type="file" id="zdjecie_ankieta" name="zdjecie_ankieta" accept="image/*" required><br><br>
-
-            <label for="silnik_ankieta">Typ Silnika:</label>
-            <input type="text" id="silnik_ankieta" name="silnik_ankieta" required><br><br>
-
-            <label for="wypadkowe_ankieta">Czy auto było wypadkowe?</label>
-            <select id="wypadkowe_ankieta" name="wypadkowe_ankieta" required>
-                <option value="tak">Tak</option>
-                <option value="nie">Nie</option>
-            </select><br><br>
-
-            <label for="kolosize_ankieta">Rozmiar Kół (np. 16", 17"): </label>
-            <input type="text" id="kolosize_ankieta" name="kolosize_ankieta" required><br><br>
-
-            <button type="submit">Zatwierdź Ankietę</button>
+            <button type="submit">Zaloguj się</button>
         </form>
     </section>
 
     <footer>
         <p>&copy; 2025 Aukcje Samochodowe - Wszelkie prawa zastrzeżone</p>
     </footer>
+
+    <script>
+        // Pokazanie formularza logowania
+        document.querySelector("a[href='#zaloguj']").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.querySelector("#zaloguj").classList.remove("hidden");
+        });
+    </script>
 </body>
 </html>
