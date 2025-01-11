@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aukcje Samochodowe</title>
+    <style>
+        /* style.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .aukcja {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, button, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aukcje Samochodowe</h1>
+        <nav>
+            <ul>
+                <li><a href="#aukcje">Aukcje</a></li>
+                <li><a href="#rejestracja">Rejestracja</a></li>
+                <li><a href="#dodaj">Dodaj Auto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="aukcje">
+        <h2>Aukcje Samochodów</h2>
+        <div class="aukcja">
+            <h3>Volkswagen Golf</h3>
+            <p><strong>Cena:</strong> 45 000 PLN</p>
+            <p><strong>Rok Produkcji:</strong> 2018</p>
+            <p><strong>Typ Silnika:</strong> Diesel 2.0 TDI</p>
+            <p><strong>Przebieg:</strong> 120 000 km</p>
+            <p><strong>Opis:</strong> Stan idealny, serwisowany w ASO, 1 właściciel.</p>
+        </div>
+
+        <div class="aukcja">
+            <h3>Ford Focus</h3>
+            <p><strong>Cena:</strong> 38 000 PLN</p>
+            <p><strong>Rok Produkcji:</strong> 2016</p>
+            <p><strong>Typ Silnika:</strong> Benzyna 1.6</p>
+            <p><strong>Przebieg:</strong> 150 000 km</p>
+            <p><strong>Opis:</strong> Dobry stan, po wymianie rozrządu.</p>
+        </div>
+
+        <!-- Więcej aukcji można dodać w ten sam sposób -->
+    </section>
+
+    <section id="rejestracja">
+        <h2>Rejestracja</h2>
+        <form>
+            <label for="username">Nazwa Użytkownika:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="email">Adres Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="submit">Zarejestruj się</button>
+        </form>
+    </section>
+
+    <section id="dodaj">
+        <h2>Dodaj Auto do Aukcji</h2>
+        <form>
+            <label for="marka">Marka:</label>
+            <input type="text" id="marka" name="marka" required><br><br>
+
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" required><br><br>
+
+            <label for="rok">Rok Produkcji:</label>
+            <input type="number" id="rok" name="rok" required><br><br>
+
+            <label for="silnik">Typ Silnika:</label>
+            <input type="text" id="silnik" name="silnik" required><br><br>
+
+            <label for="przebieg">Przebieg (w km):</label>
+            <input type="number" id="przebieg" name="przebieg" required><br><br>
+
+            <label for="cena">Cena:</label>
+            <input type="number" id="cena" name="cena" required><br><br>
+
+            <label for="zdjecie">Zdjęcie Auta:</label>
+            <input type="file" id="zdjecie" name="zdjecie" accept="image/*" required><br><br>
+
+            <label for="wypadkowe">Czy auto było wypadkowe?</label>
+            <select id="wypadkowe" name="wypadkowe" required>
+                <option value="tak">Tak</option>
+                <option value="nie">Nie</option>
+            </select><br><br>
+
+            <label for="kolosize">Rozmiar Kół (np. 16", 17"): </label>
+            <input type="text" id="kolosize" name="kolosize" required><br><br>
+
+            <label for="opis">Opis:</label>
+            <textarea id="opis" name="opis" rows="4" required></textarea><br><br>
+
+            <button type="submit">Dodaj Auto</button>
+        </form>
+
+        <h3>Ankieta dotycząca sprzedawanego auta:</h3>
+        <form>
+            <label for="cena_ankieta">Cena:</label>
+            <input type="number" id="cena_ankieta" name="cena_ankieta" required><br><br>
+
+            <label for="rok_ankieta">Rok Produkcji:</label>
+            <input type="number" id="rok_ankieta" name="rok_ankieta" required><br><br>
+
+            <label for="zdjecie_ankieta">Zdjęcie Auta:</label>
+            <input type="file" id="zdjecie_ankieta" name="zdjecie_ankieta" accept="image/*" required><br><br>
+
+            <label for="silnik_ankieta">Typ Silnika:</label>
+            <input type="text" id="silnik_ankieta" name="silnik_ankieta" required><br><br>
+
+            <label for="wypadkowe_ankieta">Czy auto było wypadkowe?</label>
+            <select id="wypadkowe_ankieta" name="wypadkowe_ankieta" required>
+                <option value="tak">Tak</option>
+                <option value="nie">Nie</option>
+            </select><br><br>
+
+            <label for="kolosize_ankieta">Rozmiar Kół (np. 16", 17"): </label>
+            <input type="text" id="kolosize_ankieta" name="kolosize_ankieta" required><br><br>
+
+            <button type="submit">Zatwierdź Ankietę</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Aukcje Samochodowe - Wszelkie prawa zastrzeżone</p>
+    </footer>
+</body>
+</html>
