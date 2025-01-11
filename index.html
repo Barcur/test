@@ -23,6 +23,7 @@
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
@@ -34,13 +35,25 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
 
-        section {
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        .tab-content {
+            display: none;
             padding: 20px;
             margin: 20px;
             background-color: white;
             border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         h2 {
@@ -103,18 +116,20 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>Aukcje Samochodowe</h1>
         <nav>
             <ul>
-                <li><a href="#aukcje">Aukcje</a></li>
-                <li><a href="#rejestracja">Rejestracja</a></li>
-                <li><a href="#dodaj">Dodaj Auto</a></li>
+                <li><a href="javascript:void(0);" onclick="showTab('aukcje')">Aukcje</a></li>
+                <li><a href="javascript:void(0);" onclick="showTab('rejestracja')">Rejestracja</a></li>
+                <li><a href="javascript:void(0);" onclick="showTab('dodaj')">Dodaj Auto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="aukcje">
+    <!-- Aukcje Tab -->
+    <div id="aukcje" class="tab-content">
         <h2>Aukcje Samochodów</h2>
 
         <!-- Aukcje -->
@@ -158,9 +173,10 @@
             <p><strong>Opis:</strong> Tani w utrzymaniu, świetny do miasta.</p>
         </div>
 
-    </section>
+    </div>
 
-    <section id="rejestracja">
+    <!-- Rejestracja Tab -->
+    <div id="rejestracja" class="tab-content">
         <h2>Rejestracja</h2>
         <form>
             <label for="username">Nazwa Użytkownika:</label>
@@ -174,9 +190,10 @@
 
             <button type="submit">Zarejestruj się</button>
         </form>
-    </section>
+    </div>
 
-    <section id="dodaj">
+    <!-- Dodaj Auto Tab -->
+    <div id="dodaj" class="tab-content">
         <h2>Dodaj Auto do Aukcji</h2>
         <form>
             <label for="marka">Marka:</label>
@@ -214,11 +231,26 @@
 
             <button type="submit">Dodaj Auto</button>
         </form>
-    </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Aukcje Samochodowe - Wszelkie prawa zastrzeżone</p>
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            var activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+        }
+
+        // Domyślnie wyświetl zakładkę "Aukcje"
+        showTab('aukcje');
+    </script>
 
 </body>
 </html>
